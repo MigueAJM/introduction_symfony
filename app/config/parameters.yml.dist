@@ -17,3 +17,9 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
+    PGSQL_TEST:
+        db_name:           test
+        db_user:          postgres
+        db_password:       secret
+        db_server:         127.0.0.1
+        db_port:           5432

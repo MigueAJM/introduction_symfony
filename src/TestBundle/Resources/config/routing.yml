@@ -1,0 +1,6 @@
+test_homepage:
+    path:     /
+    defaults: { _controller: TestBundle:Default:index }
+test_homepage_select:
+    path:     /select
+    defaults: { _controller: TestBundle:Default:select }
