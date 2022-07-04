@@ -1,6 +1,12 @@
 test_homepage:
     path:     /
     defaults: { _controller: TestBundle:Default:index }
+
 test_homepage_select:
     path:     /select
     defaults: { _controller: TestBundle:Default:select }
+
+test_homepage_get_products:
+    path:     /get-product/{id}
+    methods: [GET]
+    defaults: { _controller: TestBundle:Default:getProducts, id: 0 }

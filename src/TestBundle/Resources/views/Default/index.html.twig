@@ -1,1 +1,32 @@
-Hello World!
+{% extends "::base.html.twig" %}
+{% block title %}
+    title test
+{% endblock  %}
+{% block body %}
+    <div class="container">
+        <table>
+            <ttitle>Products</ttitle>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+{% endblock  %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        const path = "{{ path('test_homepage_get_products', {'id': 0}) }}"
+    </script>
+    <script src="{{ asset('js/resources/TestBundle/js/index.js') }}"></script>
+{% endblock  %}
