@@ -4,12 +4,11 @@ const table = $('#table_products')
 let datatable = {}, data = {}
 d.addEventListener('DOMContentLoaded', () => {
     console.log('ok')
-    getProducts(path)
-    renderDataTable(data)
+    renderDataTable(path)
+    console.log(datatable)
     
     validateForm()
 })
-
 
 
 const validateForm = () => {
@@ -62,16 +61,26 @@ const addProduct = (url, data) => {
     })
 }
 
-const renderDataTable = data => {
+const renderDataTable = url => {
 
     datatable = table.DataTable({
-        data,
+        ajax: {
+            url
+        },
         columns: [
-            {data: 'id'},
+            {data: 'id_product'},
             {data: 'name'},
             {
                 data: {},
-                render: data => `<div><a id="updateProduct">Update</a><a id="disableProduct">Delete</a></div>`
+                render: data => `
+                    <div>
+                        <a id="updateProduct" class="btn green accent-3" data_id="${data.id_product}">
+                            Update
+                        </a>
+                        <a id="disableProduct" class="btn  red darken-4"  data_id="${data.id_product}">
+                            Delete
+                        </a>
+                    </div>`
             }
         ]
     })

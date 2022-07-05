@@ -7,6 +7,6 @@ test_homepage_select:
     defaults: { _controller: TestBundle:Default:select }
 
 test_homepage_get_products:
-    path:     /get-product/{id}
+    path:     /get-products/{id}
     methods: [GET]
     defaults: { _controller: TestBundle:Default:getProducts, id: 0 }

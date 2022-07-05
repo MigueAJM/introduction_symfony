@@ -1,10 +1,14 @@
 {% extends "::base.html.twig" %}
 {% block title %}
-    title test
+   Title new
+{% endblock  %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('js/resources/TestBundle/css/app.css') }}">
 {% endblock  %}
 {% block body %}
     <div class="container">
-        <table>
+        <table id="table_products">
             <ttitle>Products</ttitle>
             <thead>
             <tr>

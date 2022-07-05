@@ -24,15 +24,15 @@ class DefaultController extends Controller
 
 
     public function getProductsAction(Request $request, Int $id = 0)
-    {   
+    {
         $columns = ['id_product', 'name'];
         $condition = ['active' => 'true'];
-        if($id) $condition['id_product'] = $id;
+        if ($id) $condition['id_product'] = $id;
         $response = $this->defaultModel->getProductsOrProduct('public', $columns, $condition);
         return new JsonResponse($response);
     }
 
-/*     public function selectAction()
+    /*     public function selectAction()
     {
         $query = 'SELECT id_product, name FROM products WHERE active=true';
         print_r($this->model->executeQuery($query));
