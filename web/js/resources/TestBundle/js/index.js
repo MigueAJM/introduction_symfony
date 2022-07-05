@@ -1,6 +1,8 @@
 const d = document
 const form = $('#form_products')
 const table = $('#table_products')
+const modal = $('#modal')
+const btnSave = d.getElementById('btn_save')
 let datatable = {}, data = {}
 d.addEventListener('DOMContentLoaded', () => {
     console.log('ok')
@@ -74,10 +76,10 @@ const renderDataTable = url => {
                 data: {},
                 render: data => `
                     <div>
-                        <a id="updateProduct" class="btn green accent-3" data_id="${data.id_product}">
+                        <a class="btn green accent-3 updateProduct" data_id="${data.id_product}">
                             Update
                         </a>
-                        <a id="disableProduct" class="btn  red darken-4"  data_id="${data.id_product}">
+                        <a class="btn  red darken-4 disableProduct"  data_id="${data.id_product}">
                             Delete
                         </a>
                     </div>`
@@ -100,3 +102,10 @@ const getProducts = url => {
         error:  request => alert(request.responseText)
     })
 }
+
+$(document).on('click','.updateProduct', function(){
+    /* btnSave.setAttribute('data_id', this[0].getAttribute('data_id')) */
+    modal[0].showModal()
+    console.log('click')
+})
+/* updateProduct({id: this.getAttribute('data_id')}) */
